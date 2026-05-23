@@ -8,7 +8,10 @@ A lightweight GitHub Pages homepage for the atlas and explorer collection at
 - Volcanoes
 - Ancient Rome
 - American History Atlas
+- Flags
+- United States Money
 - Periodic Table Explorer
+- Math
 - Solar System Atlas
 - Mesozoic Atlas
 - Cenozoic Fauna Database
