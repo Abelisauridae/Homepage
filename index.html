@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A homepage linking the Abelisauridae atlas and explorer collection."
+    >
+    <title>Abelisauridae Atlas Index</title>
+    <script>
+      (() => {
+        const getCookieTheme = () => {
+          const match = document.cookie.match(/(?:^|; )atlas-theme=(dark|light)/);
+          return match ? match[1] : null;
+        };
+
+        try {
+          const storedTheme = localStorage.getItem("atlas-theme") || getCookieTheme();
+          const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.dataset.theme = storedTheme || (prefersDark ? "dark" : "light");
+        } catch {
+          const cookieTheme = getCookieTheme();
+          document.documentElement.dataset.theme = cookieTheme || "light";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">Skip to catalog</a>
+
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Abelisauridae Atlas Index home">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <circle cx="20" cy="20" r="17"></circle>
+          <path d="M20 8v24M8 20h24"></path>
+          <path d="m14 26 4-12 8 8-12 4Z"></path>
+        </svg>
+        <span>Atlas Index</span>
+      </a>
+
+      <div class="header-actions">
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#catalog">Catalog</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4v2.2M12 17.8V20M4 12h2.2M17.8 12H20M6.4 6.4 8 8M16 16l1.6 1.6M17.6 6.4 16 8M8 16l-1.6 1.6"></path>
+            <circle cx="12" cy="12" r="3.6"></circle>
+          </svg>
+          <span class="theme-toggle-text">Dark mode</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <h1 id="page-title">Abelisauridae Atlas Index</h1>
+          <p>
+            A single front door for the atlas collection: deep time, planets,
+            history, language, games, wrestling, literature, chemistry,
+            volcanoes, and local maps.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#catalog">Browse the collection</a>
+            <a class="button secondary" href="https://github.com/abelisauridae">GitHub profile</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Collection summary">
+          <div class="summary-stat">
+            <strong>14</strong>
+            <span>linked projects</span>
+          </div>
+          <div class="summary-list" aria-label="Featured areas">
+            <span>Natural history</span>
+            <span>Human history</span>
+            <span>Science</span>
+            <span>Maps and media</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="catalog-title">Catalog</h2>
+            <p>Search or filter the collection, then open any atlas directly.</p>
+          </div>
+          <p class="result-count" aria-live="polite">
+            <span id="visible-count">14</span> projects shown
+          </p>
+        </div>
+
+        <div class="catalog-tools" aria-label="Catalog controls">
+          <label class="search-field">
+            <span>Search projects</span>
+            <input
+              id="atlas-search"
+              type="search"
+              autocomplete="off"
+              placeholder="Try dinosaurs, Rome, games, language..."
+            >
+          </label>
+
+          <div class="filter-group" aria-label="Filter by area">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="natural" aria-pressed="false">Natural history</button>
+            <button class="filter-button" type="button" data-filter="history" aria-pressed="false">History</button>
+            <button class="filter-button" type="button" data-filter="science" aria-pressed="false">Science</button>
+            <button class="filter-button" type="button" data-filter="culture" aria-pressed="false">Culture</button>
+            <button class="filter-button" type="button" data-filter="maps" aria-pressed="false">Maps</button>
+          </div>
+        </div>
+
+        <div class="atlas-grid" id="atlas-grid">
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Volcanoes/"
+            data-category="natural science"
+          >
+            <span class="card-meta">Earth science</span>
+            <h3>Volcanoes</h3>
+            <p>Explore volcanic landscapes, eruptions, and geologic context across the planet.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Ancient-Rome/"
+            data-category="history culture"
+          >
+            <span class="card-meta">Ancient world</span>
+            <h3>Ancient Rome</h3>
+            <p>Trace Roman places, people, institutions, and expansion through a browsable atlas.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/American-History-Atlas/"
+            data-category="history maps"
+          >
+            <span class="card-meta">United States</span>
+            <h3>American History Atlas</h3>
+            <p>Follow major American history topics through maps, timelines, and reference views.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Periodic-Table-Explorer/"
+            data-category="science"
+          >
+            <span class="card-meta">Chemistry</span>
+            <h3>Periodic Table Explorer</h3>
+            <p>Browse elements, properties, categories, and periodic patterns in a focused tool.</p>
+            <span class="card-link">Open explorer <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Solar-System-Atlas/"
+            data-category="science"
+          >
+            <span class="card-meta">Space</span>
+            <h3>Solar System Atlas</h3>
+            <p>Visit planets, moons, and other solar system bodies through an astronomical atlas.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Mesozoic-Atlas/"
+            data-category="natural science"
+          >
+            <span class="card-meta">Deep time</span>
+            <h3>Mesozoic Atlas</h3>
+            <p>Move through the Triassic, Jurassic, and Cretaceous worlds of the Mesozoic Era.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Cenozoic-Fauna-Database/"
+            data-category="natural science"
+          >
+            <span class="card-meta">Fossil mammals</span>
+            <h3>Cenozoic Fauna Database</h3>
+            <p>Search post-dinosaur animal life through a database of Cenozoic fauna.</p>
+            <span class="card-link">Open database <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Paleozoic-Atlas/"
+            data-category="natural science"
+          >
+            <span class="card-meta">Early life</span>
+            <h3>Paleozoic Atlas</h3>
+            <p>Explore ancient seas, early land ecosystems, and Paleozoic evolutionary history.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Dinosaur-Atlas/"
+            data-category="natural science"
+          >
+            <span class="card-meta">Dinosaurs</span>
+            <h3>Dinosaur Atlas</h3>
+            <p>Browse dinosaur groups, families, and prehistoric context in one reference hub.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Video-Game-Explorer/"
+            data-category="culture"
+          >
+            <span class="card-meta">Interactive media</span>
+            <h3>Video Game Explorer</h3>
+            <p>Search and browse games through a catalog built for discovery and comparison.</p>
+            <span class="card-link">Open explorer <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Pro-Wrestling-Atlas/"
+            data-category="culture history"
+          >
+            <span class="card-meta">Sports entertainment</span>
+            <h3>Pro Wrestling Atlas</h3>
+            <p>Browse wrestling people, promotions, eras, and ring history through an atlas view.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Language-Atlas/"
+            data-category="culture maps science"
+          >
+            <span class="card-meta">Languages</span>
+            <h3>Language Atlas</h3>
+            <p>Explore languages, families, writing systems, and geographic context in one place.</p>
+            <span class="card-link">Open atlas <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Restoration-Drama-Search/"
+            data-category="culture history"
+          >
+            <span class="card-meta">Literature</span>
+            <h3>Restoration Drama Search</h3>
+            <p>Search Restoration drama texts and related literary material from one interface.</p>
+            <span class="card-link">Open search <span aria-hidden="true">↗</span></span>
+          </a>
+
+          <a
+            class="atlas-card"
+            href="https://abelisauridae.github.io/Connecticut-Atlas/#9.33/41.4105/-72.9352"
+            data-category="maps history"
+          >
+            <span class="card-meta">Local maps</span>
+            <h3>Connecticut Atlas</h3>
+            <p>Open an interactive Connecticut map centered on south-central Connecticut.</p>
+            <span class="card-link">Open map <span aria-hidden="true">↗</span></span>
+          </a>
+        </div>
+
+        <p class="empty-state" id="empty-state" hidden>
+          No projects match that search yet.
+        </p>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About This Homepage</h2>
+        <p>
+          This page is a lightweight GitHub Pages index for the atlas projects.
+          It is designed to work as the root site for the
+          <code>abelisauridae.github.io</code> repository and link outward to
+          each project page.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Abelisauridae Atlas Index</span>
+      <a href="https://github.com/abelisauridae">View projects on GitHub</a>
+    </footer>
+  </body>
+</html>
