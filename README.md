@@ -17,6 +17,7 @@ A lightweight GitHub Pages homepage for the atlas and explorer collection at
 - Cenozoic Fauna Database
 - Paleozoic Atlas
 - Dinosaur Atlas
+- Quetzalcoatlus Atlas
 - Video Game Explorer
 - Pro Wrestling Atlas
 - Language Atlas

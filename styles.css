@@ -457,6 +457,10 @@ a {
     box-shadow 180ms ease;
 }
 
+.atlas-card[hidden] {
+  display: none;
+}
+
 .atlas-card:hover,
 .atlas-card:focus-visible {
   border-color: var(--green-card-border);
