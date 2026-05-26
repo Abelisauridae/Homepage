@@ -22,6 +22,7 @@ A lightweight GitHub Pages homepage for the atlas and explorer collection at
 - Pro Wrestling Atlas
 - Language Atlas
 - Restoration Drama Search
+- Rex Texts
 - Connecticut Atlas
 
 ## Publishing
