@@ -18,11 +18,17 @@ A lightweight GitHub Pages homepage for the atlas and explorer collection at
 - Paleozoic Atlas
 - Dinosaur Atlas
 - Quetzalcoatlus Atlas
+- Diplodocus Dossier
+- Brontosaurus Bulletin
+- Allosaurus Almanac
 - Video Game Explorer
+- Video Game Atlas
 - Pro Wrestling Atlas
 - Language Atlas
 - Restoration Drama Search
 - Rex Texts
+- Recipes
+- Room Planner
 - Connecticut Atlas
 
 ## Publishing
